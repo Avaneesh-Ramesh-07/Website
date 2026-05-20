@@ -81,32 +81,78 @@ export const content = {
 
   projects: {
     heading: "Projects",
-    subheading: "Research & builds",
-    items: [
+    categories: [
       {
-        title: "PerfGPT",
-        description: "Scalable and fully automated pipeline for customized dataset generation from scientific literature and Llama, GPT, and BERT model fine-tuning with parallelization and QLoRA optimization.",
-        tags: ["Python", "Large Language Models", "High-Performance-Computing"],
-        links: [
-          { label: "Extended Abstract (SC2024 TPC Workshop)", href: "https://drive.google.com/file/d/18fNyI0annq1WWK_4MIiM088STPpEJy1C/view?pli=1" },
+        label: "Research",
+        items: [
+          {
+            title: "PerfGPT",
+            description: "Scalable and fully automated pipeline for customized dataset generation from scientific literature and Llama, GPT, and BERT model fine-tuning with parallelization and QLoRA optimization.",
+            tags: ["Python", "Large Language Models", "High-Performance-Computing"],
+            links: [
+              { label: "Extended Abstract (SC2024 TPC Workshop)", href: "https://drive.google.com/file/d/18fNyI0annq1WWK_4MIiM088STPpEJy1C/view?pli=1" },
+            ],
+          },
+          {
+            title: "Comparative Visualizations of Performance Anomaly Provenance in Chimbuko",
+            description: "Implemented Circos Visualization to identify and analyze correlations among anomalous functions across multiple runs of an application and the relationships between the performance counters of each run and their similarities across runs.",
+            tags: ["Python", "Machine Learning", "High-Performance-Computing"],
+            links: [
+              { label: "Poster (SC2023 International Conference)", href: "https://drive.google.com/file/d/1_8DT8E4AiztNti24lXMvyrnj3RGeirFP/view" },
+              { label: "Paper (SC2023 International Conference)", href: "https://drive.google.com/file/d/1tR-aJoKwFIbG_v3nYjpUSFc_mC0j0_UZ/view" },
+            ],
+          },
+          {
+            title: "Correlation Analysis of Performance Counters in High-Performance Computing",
+            description: "Applied Linear Sieve ML algorithm for correlation analysis among 20-500 performance counters in HPC application; visualized results with Node Graph and Parallel Coordinates.",
+            tags: ["Python", "Machine Learning", "High-Performance-Computing"],
+            links: [
+              { label: "Poster (TSU REU Program)", href: "https://drive.google.com/file/d/1LrFABx2AH0b5nz6wibie-FJLyAjfnzRd/view" },
+            ],
+          },
+          {
+            title: "RAGRank",
+            description: "See description above.",
+            tags: ["Retrieval-Augmented-Generation", "Cybersecurity", "Large Language Models"],
+            links: [
+              { label: "Paper Submission to WAITI Workshop, Annual Computer Security Applications Conference", href: "https://arxiv.org/abs/2510.20768" },
+            ],
+          },
         ],
       },
       {
-        title: "Comparative Visualizations of Performance Anomaly Provenance in Chimbuko",
-        description: "Implemented Circos Visualization to identify and analyze correlations among anomalous functions across multiple runs of an application and the relationships between the performance counters of each run and their similarities across runs.",
-        tags: ["Python", "Machine Learning", "High-Performance-Computing"],
-        links: [
-          { label: "Poster (SC2023 International Conference)", href: "https://drive.google.com/file/d/1_8DT8E4AiztNti24lXMvyrnj3RGeirFP/view" },
-          { label: "Paper (SC2023 International Conference)", href: "https://drive.google.com/file/d/1tR-aJoKwFIbG_v3nYjpUSFc_mC0j0_UZ/view" },
-        ],
-      },
-      {
-        title: "Correlation Analysis of Performance Counters in High-Performance Computing",
-        description: "Applied Linear Sieve ML algorithm for correlation analysis among 20-500 performance counters in HPC application; visualized results with Node Graph and Parallel Coordinates.",
-        tags: ["Python", "Machine Learning", "High-Performance-Computing"],
-        links: [
-          { label: "Poster (TSU REU Program)", href: "https://drive.google.com/file/d/1LrFABx2AH0b5nz6wibie-FJLyAjfnzRd/view" },
-        ],
+        label: "Other",
+        items: [
+            {
+                title: "Wish Shell",
+                description: "A Unix shell built in C as part of the OSTEP projects curriculum. Supports built-in commands, executable path resolution, piped outputs, and flexible whitespace handling.",
+                tags: ["C", "Bash"],
+                links: [
+                    { label: "GitHub", href: "https://github.com/Avaneesh-Ramesh-07/wish-shell" },
+                ],
+          },
+          {
+                title: "Random Forest",
+                description: "Random Forest Model that I made from scratch in Python. Supports training and testing on a dataset.",
+                tags: ["Python", "Machine Learning", "Random Forest"],
+                links: [
+                    { label: "GitHub", href: "https://github.com/Avaneesh-Ramesh-07/RandomForest" },
+                ],
+          },
+          {
+                title: "Occupancy Map",
+                description: "See Avaneesh_Omap/build_omap.py for my contribution. Given input LiDAR data and servo angles, constructs an accurate occupancy map. Completed as part of the Computer Vision team for Longhorn Neurotech. Part of a larger project, where we are developing an autonomous rover with vision-based object detection and RL navigation for obstacle-aware path planning.",
+                tags: ["Python", "Robotics", "LiDAR", "Occupancy Map"],
+                links: [
+                    { label: "GitHub", href: "https://github.com/Avaneesh-Ramesh-07/Computer-Vision/tree/main/Avaneesh_OMap" },
+                ],
+          },
+          {
+                title: "UsherBot",
+                description: "FRI I (Autonomous Robotics) final project, completed in collaboration with other UTCS freshmen. Users interact with our UsherBot via an intuitive frontend, where they sign in and select their reservation. Our UsherBot leads the user to their reserved seat. Tech stack: Python and TypeScript frontend, Supabase backend, C++ for robot navigation logic",
+                tags: ["Python", "Robotics", "LiDAR", "Occupancy Map"],
+          },
+        ]
       },
     ],
   },
@@ -117,14 +163,13 @@ export const content = {
     items: [
       {
         title: "Guitar",
-        description: "I love to play the guitar in my free time. I've been playing for about 10 years, and I've learned various songs on electric guitar and various pieces for classical guitar. For the past year, I've been trying to get into improv and spanish music. For an independent-study presentation, back in high school, I learned how to play the guitar, flamenco-style, and essentially composed a short piece showcasing my different techniques. After that, I went really heavy on music theory with my teacher and grinded scales, arpeggios, and other finger patterns. Now, I'm at the point where I can hear songs in different genres like pop, kpop, rock, and bollywood and improv along to them! " +
-                      "Right now, I'm learning a jazz piece called Black Orpheus. It's kinda my first time getting involved in Jazz and it's fun to learn the chords, although the improv here is definitely more of a learning curve...",
+        description: "I've been playing guitar for about 10 years, spanning electric, classical, and flamenco styles. In high school, I composed a short flamenco piece for an independent-study presentation, then dove deep into music theory: scales, arpeggios, and finger patterns. Now I can improv along to pop, kpop, rock, and bollywood by ear. Lately I've been exploring jazz through Black Orpheus, which is a fun new challenge!",
         tags: [] as string[],
         links: [] as { label: string; href: string }[],
       },
       {
         title: "Clarinet",
-        description: "I was part of Westwood High School's Band program throughout all 4 years. I played clarinet in the Wind Ensemble (highest band) during my Junior and Senior years of high school. During Junior year, we attended the Midwest Clinic in Chicago, where we gave a huge concert! My favorite piece we played has to be Antique Violences by John Mackey!" +
+        description: "I was part of Westwood High School's Band program throughout all 4 years. I played clarinet in the Wind Ensemble (highest band) during my Junior and Senior years of high school. During Junior year, we attended the Midwest Clinic in Chicago, where we gave a huge concert!" +
                       "I also participated in Marching Band throughout all 4 years as well.",
         tags: [] as string[],
         links: [] as { label: string; href: string }[],
