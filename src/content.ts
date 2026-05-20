@@ -150,7 +150,7 @@ export const content = {
                     {
                         title: "UsherBot",
                         description: "FRI I (Autonomous Robotics) final project, completed in collaboration with other UTCS freshmen. Users interact with our UsherBot via an intuitive frontend, where they sign in and select their reservation. Our UsherBot leads the user to their reserved seat. Tech stack: Python and TypeScript frontend, Supabase backend, C++ for robot navigation logic",
-                        tags: ["Python", "Robotics", "LiDAR", "Occupancy Map"],
+                        tags: ["Robotics", "ROS"],
                         links: [] as { label: string; href: string }[],
                     },
                 ],
