@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Nav from './components/Nav'
 import Home from './components/Home'
-import AustinSkyline from './components/AustinSkyline'
+import MusicStage from './components/MusicStage'
 import About from './components/About'
 import Experience from './components/Experience'
 import Other from './components/Other'
@@ -38,7 +38,7 @@ export default function App() {
       <Nav activeSection={activeSection} />
       <main>
         <Home />
-        <AustinSkyline />
+        <MusicStage />
         <About />
         <Experience />
         <Other />

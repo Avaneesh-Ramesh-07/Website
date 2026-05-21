@@ -21,10 +21,11 @@ export const content = {
             "In the future, I plan to pursue higher education and a career in robotics and education.",
         ],
         skills: [
-            "JavaScript",
-            "TypeScript",
-            "React",
-            "Node.js",
+            "Python",
+            "Java",
+            "C",
+            "C++",
+            "C# (.Net)"
         ],
         skillsLabel: "Technologies I work with:",
     },

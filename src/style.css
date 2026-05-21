@@ -2,15 +2,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:          #0a0a0f;
-  --bg-card:     #13131a;
-  --bg-card-alt: #1a1a24;
-  --border:      #2a2a3a;
-  --accent:      #6c63ff;
-  --accent-glow: rgba(108, 99, 255, 0.35);
-  --accent2:     #ff6b9d;
-  --text:        #e8e8f0;
-  --text-muted:  #888899;
+  --bg:          #060d1a;
+  --bg-card:     #0d1829;
+  --bg-card-alt: #102035;
+  --border:      #1a3050;
+  --accent:      #00bcd4;
+  --accent-glow: rgba(0, 188, 212, 0.35);
+  --accent2:     #4dd0e1;
+  --text:        #ddeeff;
+  --text-muted:  #5588aa;
   --nav-height:  64px;
   --section-gap: 120px;
   --radius:      12px;
@@ -157,7 +157,7 @@ section {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text);
-  background: rgba(108, 99, 255, 0.12);
+  background: rgba(0, 188, 212, 0.12);
   text-decoration: none;
 }
 
@@ -194,7 +194,7 @@ section {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 60% at 70% 40%, rgba(108,99,255,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 60% at 70% 40%, rgba(0,188,212,0.15) 0%, transparent 70%),
     radial-gradient(ellipse 40% 40% at 20% 70%, rgba(255,107,157,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -422,7 +422,7 @@ section {
 .card:hover {
   border-color: var(--accent);
   transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(108,99,255,0.15);
+  box-shadow: 0 8px 32px rgba(0,188,212,0.15);
 }
 
 .card-title { color: var(--text); font-weight: 700; }
@@ -435,7 +435,7 @@ section {
 }
 
 .tag {
-  background: rgba(108,99,255,0.12);
+  background: rgba(0,188,212,0.12);
   color: var(--accent);
   padding: 4px 10px;
   border-radius: 20px;
@@ -585,7 +585,7 @@ section {
   height: 380px;
   border-radius: 50%;
   background: radial-gradient(ellipse at center,
-    rgba(108, 99, 255, 0.13) 0%,
+    rgba(0, 188, 212, 0.13) 0%,
     transparent 70%);
   transform: translate(-50%, -50%);
   z-index: 9998;
@@ -638,8 +638,8 @@ section {
 
 .card-3d:hover {
   box-shadow:
-    0 20px 40px rgba(108, 99, 255, 0.25),
-    0 0 0 1px rgba(108, 99, 255, 0.3);
+    0 20px 40px rgba(0, 188, 212, 0.25),
+    0 0 0 1px rgba(0, 188, 212, 0.3);
 }
 
 /* ── Austin Skyline section ─────────────────────────────── */
@@ -670,7 +670,7 @@ section {
 }
 
 .skyline-building {
-  color: #1a1e3c;
+  color: #0d1e38;
   cursor: pointer;
   outline: none;
   transition: color 0.25s ease, filter 0.25s ease;
@@ -678,15 +678,35 @@ section {
 
 .skyline-building:hover,
 .skyline-building.is-hovered {
-  color: #6c63ff;
+  color: #00bcd4;
   filter:
-    drop-shadow(0 0 6px rgba(108, 99, 255, 0.9))
-    drop-shadow(0 0 18px rgba(108, 99, 255, 0.5));
+    drop-shadow(0 0 6px rgba(0, 188, 212, 0.9))
+    drop-shadow(0 0 18px rgba(0, 188, 212, 0.5));
 }
 
 .skyline-building:focus-visible {
-  color: #6c63ff;
-  filter: drop-shadow(0 0 8px rgba(108, 99, 255, 1));
+  color: #00bcd4;
+  filter: drop-shadow(0 0 8px rgba(0, 188, 212, 1));
+}
+
+.music-instrument {
+  color: #1a3558;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.25s ease, filter 0.25s ease;
+}
+
+.music-instrument:hover,
+.music-instrument.is-hovered {
+  color: #00bcd4;
+  filter:
+    drop-shadow(0 0 6px rgba(0, 188, 212, 0.9))
+    drop-shadow(0 0 18px rgba(0, 188, 212, 0.5));
+}
+
+.music-instrument:focus-visible {
+  color: #00bcd4;
+  filter: drop-shadow(0 0 8px rgba(0, 188, 212, 1));
 }
 
 .skyline-tooltip {

@@ -64,13 +64,13 @@ export default function AustinSkyline() {
         >
           <defs>
             <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stopColor="#0d0620" />
-              <stop offset="60%"  stopColor="#0d1840" />
-              <stop offset="100%" stopColor="#1a2a5e" />
+              <stop offset="0%"   stopColor="#020b18" />
+              <stop offset="60%"  stopColor="#041428" />
+              <stop offset="100%" stopColor="#0a2040" />
             </linearGradient>
             <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stopColor="#131d40" />
-              <stop offset="100%" stopColor="#0a0f20" />
+              <stop offset="0%"   stopColor="#040e1e" />
+              <stop offset="100%" stopColor="#020810" />
             </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="4" result="blur" />
@@ -88,46 +88,46 @@ export default function AustinSkyline() {
 
           {/* Moon */}
           <circle cx="1120" cy="55" r="28" fill="#ffe8a0" opacity="0.9" filter="url(#glow)" />
-          <circle cx="1132" cy="47" r="22" fill="#0d1840" />
+          <circle cx="1132" cy="47" r="22" fill="#041428" />
 
           {/* Lady Bird Lake */}
           <rect x="0" y="395" width="1200" height="85" fill="url(#waterGrad)" />
-          <line x1="0" y1="410" x2="1200" y2="410" stroke="#1e3060" strokeWidth="1.5" opacity="0.6" />
-          <line x1="0" y1="425" x2="1200" y2="425" stroke="#1e3060" strokeWidth="1"   opacity="0.4" />
-          <line x1="0" y1="440" x2="1200" y2="440" stroke="#1e3060" strokeWidth="0.8" opacity="0.3" />
+          <line x1="0" y1="410" x2="1200" y2="410" stroke="#1a3a5a" strokeWidth="1.5" opacity="0.6" />
+          <line x1="0" y1="425" x2="1200" y2="425" stroke="#1a3a5a" strokeWidth="1"   opacity="0.4" />
+          <line x1="0" y1="440" x2="1200" y2="440" stroke="#1a3a5a" strokeWidth="0.8" opacity="0.3" />
           {/* Reflection glows */}
-          <ellipse cx="152"  cy="430" rx="18" ry="5" fill="#6c63ff" opacity="0.18" />
-          <ellipse cx="308"  cy="432" rx="14" ry="5" fill="#6c63ff" opacity="0.15" />
-          <ellipse cx="510"  cy="428" rx="22" ry="6" fill="#6c63ff" opacity="0.18" />
-          <ellipse cx="672"  cy="430" rx="15" ry="5" fill="#6c63ff" opacity="0.15" />
-          <ellipse cx="808"  cy="430" rx="17" ry="5" fill="#6c63ff" opacity="0.16" />
-          <ellipse cx="958"  cy="432" rx="18" ry="5" fill="#6c63ff" opacity="0.15" />
+          <ellipse cx="152"  cy="430" rx="18" ry="5" fill="#00bcd4" opacity="0.18" />
+          <ellipse cx="308"  cy="432" rx="14" ry="5" fill="#00bcd4" opacity="0.15" />
+          <ellipse cx="510"  cy="428" rx="22" ry="6" fill="#00bcd4" opacity="0.18" />
+          <ellipse cx="672"  cy="430" rx="15" ry="5" fill="#00bcd4" opacity="0.15" />
+          <ellipse cx="808"  cy="430" rx="17" ry="5" fill="#00bcd4" opacity="0.16" />
+          <ellipse cx="958"  cy="432" rx="18" ry="5" fill="#00bcd4" opacity="0.15" />
 
           {/* ── FILLER BUILDINGS (non-interactive) ── */}
           {/* Far left */}
-          <rect x="0"    y="340" width="50"  height="55"  fill="#161c38" />
-          <rect x="18"   y="312" width="28"  height="83"  fill="#161c38" />
+          <rect x="0"    y="340" width="50"  height="55"  fill="#0c1c30" />
+          <rect x="18"   y="312" width="28"  height="83"  fill="#0c1c30" />
           {/* Between Capitol and UT Tower */}
-          <rect x="212"  y="308" width="24"  height="87"  fill="#161c38" />
-          <rect x="220"  y="285" width="18"  height="110" fill="#161c38" />
+          <rect x="212"  y="308" width="24"  height="87"  fill="#0c1c30" />
+          <rect x="220"  y="285" width="18"  height="110" fill="#0c1c30" />
           {/* Between UT Tower and Frost Bank */}
-          <rect x="400"  y="215" width="48"  height="180" fill="#181e3a" />
-          <rect x="432"  y="245" width="35"  height="150" fill="#161c38" />
-          <rect x="450"  y="268" width="26"  height="127" fill="#14193a" />
+          <rect x="400"  y="215" width="48"  height="180" fill="#0e1e34" />
+          <rect x="432"  y="245" width="35"  height="150" fill="#0c1c30" />
+          <rect x="450"  y="268" width="26"  height="127" fill="#0a1828" />
           {/* Between Frost Bank and 360 */}
-          <rect x="600"  y="195" width="36"  height="200" fill="#181e3a" />
-          <rect x="614"  y="218" width="24"  height="177" fill="#161c38" />
+          <rect x="600"  y="195" width="36"  height="200" fill="#0e1e34" />
+          <rect x="614"  y="218" width="24"  height="177" fill="#0c1c30" />
           {/* Between 360 and The Independent */}
-          <rect x="720"  y="225" width="30"  height="170" fill="#181e3a" />
-          <rect x="732"  y="248" width="22"  height="147" fill="#161c38" />
+          <rect x="720"  y="225" width="30"  height="170" fill="#0e1e34" />
+          <rect x="732"  y="248" width="22"  height="147" fill="#0c1c30" />
           {/* Between The Independent and Congress Ave */}
-          <rect x="860"  y="215" width="32"  height="180" fill="#181e3a" />
-          <rect x="874"  y="235" width="22"  height="160" fill="#161c38" />
+          <rect x="860"  y="215" width="32"  height="180" fill="#0e1e34" />
+          <rect x="874"  y="235" width="22"  height="160" fill="#0c1c30" />
           {/* Right side */}
-          <rect x="1020" y="245" width="44"  height="150" fill="#161c38" />
-          <rect x="1048" y="268" width="30"  height="127" fill="#14193a" />
-          <rect x="1090" y="295" width="42"  height="100" fill="#161c38" />
-          <rect x="1145" y="318" width="55"  height="77"  fill="#161c38" />
+          <rect x="1020" y="245" width="44"  height="150" fill="#0c1c30" />
+          <rect x="1048" y="268" width="30"  height="127" fill="#0a1828" />
+          <rect x="1090" y="295" width="42"  height="100" fill="#0c1c30" />
+          <rect x="1145" y="318" width="55"  height="77"  fill="#0c1c30" />
 
           {/* ── 1 · STATE CAPITOL (Home) ── */}
           <g {...buildingProps('home', 'Home', '#home')}>
@@ -211,15 +211,15 @@ export default function AustinSkyline() {
                 width={hovBuilding.tooltipW}
                 height="30"
                 rx="8"
-                fill="rgba(108,99,255,0.28)"
-                stroke="#6c63ff"
+                fill="rgba(0,188,212,0.28)"
+                stroke="#00bcd4"
                 strokeWidth="1"
               />
               <text
                 x={hovBuilding.centerX}
                 y="433"
                 textAnchor="middle"
-                fill="#c5c2ff"
+                fill="#a0f0ff"
                 fontSize="13"
                 fontWeight="700"
                 fontFamily="'Segoe UI', system-ui, sans-serif"
