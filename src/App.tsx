@@ -1,51 +1,80 @@
-import { useState, useEffect } from 'react'
-import Nav from './components/Nav'
-import Home from './components/Home'
-import MusicStage from './components/MusicStage'
+import { useState, useEffect, useCallback, type ReactNode } from 'react'
+import StudioScene from './components/StudioScene'
+import ContentPanel from './components/ContentPanel'
 import About from './components/About'
 import Experience from './components/Experience'
-import Other from './components/Other'
+import Projects from './components/Other'
 import OutsideCS from './components/OutsideCS'
 import Contact from './components/Contact'
-import Footer from './components/Footer'
 import Cursor from './components/Cursor'
-import ProgressBar from './components/ProgressBar'
+import type { SectionId } from './types'
 
-const SECTIONS = ['home', 'about', 'experience', 'projects', 'outside-cs', 'contact']
+const SECTION_CONTENT: Record<SectionId, ReactNode> = {
+  about: <About />,
+  experience: <Experience />,
+  projects: <Projects />,
+  'outside-cs': <OutsideCS />,
+  contact: <Contact />,
+}
+
+type Phase = 'studio' | 'zooming-out' | 'panel' | 'zooming-in'
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('home')
+  const [phase, setPhase] = useState<Phase>('studio')
+  const [activeSection, setActiveSection] = useState<SectionId | null>(null)
+  const [zoomOrigin, setZoomOrigin] = useState({ x: 50, y: 50 })
+
+  const openSection = useCallback((id: SectionId, originX: number, originY: number) => {
+    setZoomOrigin({ x: originX, y: originY })
+    setPhase('zooming-out')
+    setTimeout(() => {
+      setActiveSection(id)
+      setPhase('panel')
+    }, 520)
+  }, [])
+
+  const closeSection = useCallback(() => {
+    setPhase('zooming-in')
+    setTimeout(() => {
+      setActiveSection(null)
+      setPhase('studio')
+    }, 400)
+  }, [])
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = []
-    SECTIONS.forEach((id) => {
-      const el = document.getElementById(id)
-      if (!el) return
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
-        { rootMargin: '-40% 0px -55% 0px' },
-      )
-      obs.observe(el)
-      observers.push(obs)
-    })
-    return () => observers.forEach((o) => o.disconnect())
-  }, [])
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape' && (phase === 'panel')) closeSection()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [phase, closeSection])
+
+  const studioZooming = phase === 'zooming-out'
+  const studioVisible = phase === 'studio' || phase === 'zooming-out' || phase === 'zooming-in'
+  const panelVisible  = phase === 'panel' || phase === 'zooming-in'
 
   return (
     <>
-      <ProgressBar />
       <Cursor />
-      <Nav activeSection={activeSection} />
-      <main>
-        <Home />
-        <MusicStage />
-        <About />
-        <Experience />
-        <Other />
-        <OutsideCS />
-        <Contact />
-      </main>
-      <Footer />
+
+      {/* Studio scene — always mounted, transitions handle show/hide */}
+      <div
+        className={`studio-wrapper${studioZooming ? ' studio-zoom-out' : ''}${phase === 'zooming-in' ? ' studio-zoom-in' : ''}`}
+        style={{ '--zoom-x': `${zoomOrigin.x}%`, '--zoom-y': `${zoomOrigin.y}%` } as React.CSSProperties}
+        aria-hidden={!studioVisible}
+      >
+        <StudioScene onInstrumentClick={openSection} />
+      </div>
+
+      {/* Content panel */}
+      {activeSection && (
+        <ContentPanel
+          visible={panelVisible}
+          onClose={closeSection}
+        >
+          {SECTION_CONTENT[activeSection]}
+        </ContentPanel>
+      )}
     </>
   )
 }
